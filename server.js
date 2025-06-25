@@ -7,18 +7,18 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 
-// SMTP Configuration - Update these with your real credentials
+// SMTP Configuration - UPDATE THESE WITH YOUR REAL CREDENTIALS
 const SMTP_CONFIG = {
-    provider: 'gmail', // or 'yahoo'
-    sender_email: 'igscosmetics@gmail.com', // Your Gmail or Yahoo email
-    sender_app_password: '7210149060abcDEF' // Your app password (not normal password)
+    provider: 'gmail', 
+    sender_email: 'igscosmetics@gmail.com', 
+    sender_app_password: 'YOUR_REAL_GMAIL_APP_PASSWORD_HERE' // Replace with your 16-character app password
 };
 
 // Serve static files
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 
-// Initialize SQLite DB
+//  SQLite DB
 const db = new sqlite3.Database('users.db', (err) => {
     if (err) throw err;
     db.run(`CREATE TABLE IF NOT EXISTS users (
@@ -48,7 +48,7 @@ app.post('/register', (req, res) => {
             SMTP_CONFIG.provider,
             SMTP_CONFIG.sender_email,
             SMTP_CONFIG.sender_app_password,
-            email, // recipient email
+            email, 
             username
         ], (error, stdout, stderr) => {
             if (error) {
