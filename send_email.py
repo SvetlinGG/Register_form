@@ -12,10 +12,10 @@ recipient = sys.argv[1]
 username = sys.argv[2]
 
 # --- SMTP CONFIGURATION ---
-SMTP_SERVER = 'smtp.mail.yahoo.com'
+SMTP_SERVER = 'smtp.gmail.com'
 SMTP_PORT = 587
-SMTP_USER = 'your_yahoo@yahoo.com'
-SMTP_PASS = 'your_app_password'
+SMTP_USER = 'your_gmail@gmail.com'
+SMTP_PASS = 'your_gmail_app_password'
 # --------------------------
 
 print(f"Preparing to send email...")
