@@ -10,11 +10,10 @@ recipient = sys.argv[1]
 username = sys.argv[2]
 
 # --- SMTP CONFIGURATION ---
-SMTP_SERVER = 'smtp.example.com'  # Replace with your SMTP server
+SMTP_SERVER = 'smtp.mail.yahoo.com'
 SMTP_PORT = 587
-SMTP_USER = 'your_email@gmail.com'  # Replace with your email
-SMTP_USER = 'your_email@yahoomail.com'  # Replace with your email
-SMTP_PASS = 'your_password'           # Replace with your password
+SMTP_USER = 'your_yahoo@yahoo.com'
+SMTP_PASS = 'your_yahoo_app_password'
 # --------------------------
 
 msg = EmailMessage()
