@@ -7,6 +7,13 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 
+// SMTP Configuration - Update these with your real credentials
+const SMTP_CONFIG = {
+    provider: 'gmail', // or 'yahoo'
+    sender_email: 'your_email@gmail.com', // Your Gmail or Yahoo email
+    sender_app_password: 'your_app_password' // Your app password (not normal password)
+};
+
 // Serve static files
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
@@ -35,11 +42,20 @@ app.post('/register', (req, res) => {
             }
             return res.status(500).json({ error: 'Database error.' });
         }
-        // Call Python script to send email
-        execFile('python3', ['send_email.py', email, username], (error, stdout, stderr) => {
+        // Call Python script to send email with new parameters
+        execFile('python3', [
+            'send_email.py', 
+            SMTP_CONFIG.provider,
+            SMTP_CONFIG.sender_email,
+            SMTP_CONFIG.sender_app_password,
+            email, // recipient email
+            username
+        ], (error, stdout, stderr) => {
             if (error) {
+                console.error('Email error:', error);
                 return res.status(500).json({ error: 'Failed to send verification email.' });
             }
+            console.log('Email output:', stdout);
             return res.json({ message: 'Registration successful! Verification email sent.' });
         });
     });
