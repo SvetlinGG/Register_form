@@ -10,8 +10,8 @@ const PORT = 3000;
 // SMTP Configuration - Update these with your real credentials
 const SMTP_CONFIG = {
     provider: 'gmail', // or 'yahoo'
-    sender_email: 'your_email@gmail.com', // Your Gmail or Yahoo email
-    sender_app_password: 'your_app_password' // Your app password (not normal password)
+    sender_email: 'igscosmetics@gmail.com', // Your Gmail or Yahoo email
+    sender_app_password: '7210149060abcDEF' // Your app password (not normal password)
 };
 
 // Serve static files
