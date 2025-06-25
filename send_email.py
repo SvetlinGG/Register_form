@@ -2,6 +2,7 @@ import sys
 import smtplib
 from email.message import EmailMessage
 import traceback
+import socket
 
 if len(sys.argv) != 3:
     print('Usage: send_email.py <email> <username>')
@@ -11,10 +12,10 @@ recipient = sys.argv[1]
 username = sys.argv[2]
 
 # --- SMTP CONFIGURATION ---
-SMTP_SERVER = 'smtp.example.com'  # Replace with your SMTP server
+SMTP_SERVER = 'smtp.mail.yahoo.com'
 SMTP_PORT = 587
-SMTP_USER = 'your_email@example.com'  # Replace with your email
-SMTP_PASS = 'your_password'           # Replace with your password
+SMTP_USER = 'your_yahoo@yahoo.com'
+SMTP_PASS = 'your_app_password'
 # --------------------------
 
 print(f"Preparing to send email...")
