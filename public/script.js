@@ -11,8 +11,10 @@ form.addEventListener('submit', async function(e) {
     const email = document.getElementById('email').value.trim();
 
     if (!username || !password || !email) {
-        messageDiv.textContent = 'All fields are required!';
+        const errorMsg = 'All fields are required!';
+        messageDiv.textContent = errorMsg;
         messageDiv.style.color = 'red';
+        alert(errorMsg);
         return;
     }
 
@@ -28,11 +30,15 @@ form.addEventListener('submit', async function(e) {
             messageDiv.style.color = 'green';
             form.reset();
         } else {
-            messageDiv.textContent = data.error || 'Registration failed.';
+            const errorMsg = data.error || 'Registration failed.';
+            messageDiv.textContent = errorMsg;
             messageDiv.style.color = 'red';
+            alert(errorMsg);
         }
     } catch (err) {
-        messageDiv.textContent = 'An error occurred.';
+        const errorMsg = 'An error occurred.';
+        messageDiv.textContent = errorMsg;
         messageDiv.style.color = 'red';
+        alert(errorMsg);
     }
 }); 
