@@ -12,7 +12,8 @@ username = sys.argv[2]
 # --- SMTP CONFIGURATION ---
 SMTP_SERVER = 'smtp.example.com'  # Replace with your SMTP server
 SMTP_PORT = 587
-SMTP_USER = 'your_email@example.com'  # Replace with your email
+SMTP_USER = 'your_email@gmail.com'  # Replace with your email
+SMTP_USER = 'your_email@yahoomail.com'  # Replace with your email
 SMTP_PASS = 'your_password'           # Replace with your password
 # --------------------------
 
