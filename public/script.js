@@ -1,10 +1,14 @@
-document.getElementById('registerForm').addEventListener('submit', async function(e) {
+const form = document.getElementById('registerForm');
+const messageDiv = document.getElementById('message');
+
+form.addEventListener('submit', async function(e) {
     e.preventDefault();
+    messageDiv.textContent = '';
+    messageDiv.style.display = 'block';
+
     const username = document.getElementById('username').value.trim();
     const password = document.getElementById('password').value;
     const email = document.getElementById('email').value.trim();
-    const messageDiv = document.getElementById('message');
-    messageDiv.textContent = '';
 
     if (!username || !password || !email) {
         messageDiv.textContent = 'All fields are required!';
@@ -22,7 +26,7 @@ document.getElementById('registerForm').addEventListener('submit', async functio
         if (res.ok) {
             messageDiv.textContent = data.message;
             messageDiv.style.color = 'green';
-            document.getElementById('registerForm').reset();
+            form.reset();
         } else {
             messageDiv.textContent = data.error || 'Registration failed.';
             messageDiv.style.color = 'red';
