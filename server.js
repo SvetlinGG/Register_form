@@ -9,9 +9,9 @@ const PORT = 3000;
 
 // SMTP Configuration - UPDATE THESE WITH YOUR REAL CREDENTIALS
 const SMTP_CONFIG = {
-    provider: 'gmail', 
-    sender_email: 'igscosmetics@gmail.com', 
-    sender_app_password: 'YOUR_REAL_GMAIL_APP_PASSWORD_HERE' // Replace with your 16-character app password
+    provider: 'gmail', // or 'yahoo'
+    sender_email: '', // Your Gmail or Yahoo email
+    sender_app_password: 'GET_YOUR_16_CHAR_APP_PASSWORD_FROM_GOOGLE' // Go to Google Account → Security → App passwords
 };
 
 // Serve static files
